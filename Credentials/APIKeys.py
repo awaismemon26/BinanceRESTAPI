@@ -1,5 +1,0 @@
-PKey = "VqWpAlMzs6y6bmlximjTekoSNjqu1XGJeaQnPv1DUUXVE2HfyyvAVp5GSDcQqDMg"
-SKey = "rheETBJ3owLdUpW1u6ev1ccnifK1cdP8xSGnrlpRToPWDB8R3qHm85ytRhspmpaX"
-
-PKey_awais100 = "uYivbbaSwafx0rZZwcEw1mYbQSPro2iH0qNdtH2ofvYxAwCb0UwRvHRFyiR29zH1"
-SKey_awais100 = "EKj2AhDjRhfD8u9GjYOZiZoZS15UaTF9VqTLjuGWKCM8u8pTCt8TpvOZoKUbXg9W"
