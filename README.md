@@ -1,4 +1,3 @@
-# BinanceRESTAPI
 # Binance REST API Python API 
 This API uses Flask micro web framework. 
 
