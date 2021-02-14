@@ -2,4 +2,5 @@ __pycache__/
 Credentials/__pycache__/
 .vscode/
 binanceRESTAPI.code-workspace
+.DS_Store
 Credentials/APIKeys.py
