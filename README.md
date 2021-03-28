@@ -1,7 +1,7 @@
 # Binance REST API Python
 
 ## Description
-This application uses Flask micro web framework for creating REST API. The purpose of this API is to fetch account information via HTTP REST Calls for further operations.   
+This application uses Flask micro web framework for creating REST API. The purpose of this API is to fetch account information from Binance and expose it using Account Endpoints for further operations.   
 
 # Local Development Enviornment
 - VS Code 
