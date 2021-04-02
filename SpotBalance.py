@@ -5,26 +5,26 @@ from pandas import DataFrame as dataframe
 import pandas as pd
 from APICredentials import PKey, SKey, PKey_awais100, SKey_awais100
 
-awais26Client = Client(PKey, SKey)
-awais100Client = Client(PKey_awais100, SKey_awais100)
+awais26_client = Client(PKey, SKey)
+awais100_client = Client(PKey_awais100, SKey_awais100)
 
 #%%
-def GetAwais26CurrentBalanceDF():    
+def get_awais26_current_balance():    
 
-        allAssetsJson = awais26Client.get_account()     # Awais26 Account
-        allAssetsDF = pd.json_normalize(allAssetsJson["balances"])          ## Data is coming in Json then converted by json_normalize method
-        totalBalance = allAssetsDF['free'].astype(float) + allAssetsDF['locked'].astype(float) # Total Balance
-        allAssetsDF['TotalBalance'] = totalBalance  # Added newly created totalbalance to our Dataframe
+        allAssetsJson = awais26_client.get_account()     
+        allAssetsDF = pd.json_normalize(allAssetsJson["balances"])         
+        totalBalance = allAssetsDF['free'].astype(float) + allAssetsDF['locked'].astype(float) 
+        allAssetsDF['TotalBalance'] = totalBalance  
         allAssetsDF = allAssetsDF.drop(allAssetsDF[allAssetsDF.TotalBalance == 0.00000000].index)
         return allAssetsDF
 
 #%%
-def GetAwais100CurrentBalanceDF():
-
-        allAssetsJson = awais100Client.get_account()     # Awais100 Account
-        allAssetsDF = pd.json_normalize(allAssetsJson["balances"])          ## Data is coming in Json then converted by json_normalize method
-        totalBalance = allAssetsDF['free'].astype(float) + allAssetsDF['locked'].astype(float) # Total Balance
-        allAssetsDF['TotalBalance'] = totalBalance  # Added newly created totalbalance to our Dataframe
+def get_awais100_current_balance():
+        
+        allAssetsJson = awais100_client.get_account()     
+        allAssetsDF = pd.json_normalize(allAssetsJson["balances"])          
+        totalBalance = allAssetsDF['free'].astype(float) + allAssetsDF['locked'].astype(float) 
+        allAssetsDF['TotalBalance'] = totalBalance 
         
         allAssetsDF = allAssetsDF.drop(allAssetsDF[allAssetsDF.TotalBalance == 0.00000000].index)
         return allAssetsDF

@@ -4,7 +4,9 @@ from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import check_password_hash, generate_password_hash
 from LoginCredentials import username, password
 
-listOfAccounts = [{'id': '1', 'name': 'Awais26'},{'id': '2', 'name': 'Awais100'},{'id': '3', 'name': 'Sarah12'}]
+listOfAccounts = [
+    {'id': '1', 'name': 'Awais26'},
+    {'id': '2', 'name': 'Awais100'}]
 
 USER_DATA = {
     username: generate_password_hash(password)
