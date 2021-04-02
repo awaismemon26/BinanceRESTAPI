@@ -1,3 +1,4 @@
+#%%
 from binance.client import Client
 from datetime import datetime 
 from pandas import DataFrame as dataframe
@@ -7,6 +8,7 @@ from APICredentials import PKey, SKey, PKey_awais100, SKey_awais100
 awais26Client = Client(PKey, SKey)
 awais100Client = Client(PKey_awais100, SKey_awais100)
 
+#%%
 def GetAwais26CurrentBalanceDF():    
 
         allAssetsJson = awais26Client.get_account()     # Awais26 Account
@@ -16,7 +18,7 @@ def GetAwais26CurrentBalanceDF():
         allAssetsDF = allAssetsDF.drop(allAssetsDF[allAssetsDF.TotalBalance == 0.00000000].index)
         return allAssetsDF
 
-
+#%%
 def GetAwais100CurrentBalanceDF():
 
         allAssetsJson = awais100Client.get_account()     # Awais100 Account
