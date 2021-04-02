@@ -39,4 +39,4 @@ To run our docker container:
 
 URL 
 
-[https://binancerestapi-cghrvekmwa-uc.a.run.app](https://binancerestapi-cghrvekmwa-uc.a.run.app/api/v1/accounts)
+[https://binancerestapi-cghrvekmwa-uc.a.run.app/api/v1/accounts](https://binancerestapi-cghrvekmwa-uc.a.run.app/api/v1/accounts)
