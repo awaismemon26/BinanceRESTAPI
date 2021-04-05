@@ -18,7 +18,7 @@ def get_awais26_current_balance():
         allAssetsDF['total_balance'] = allAssetsDF['free'].astype(float) + allAssetsDF['locked'].astype(float) 
         allAssetsDF = allAssetsDF.drop(allAssetsDF[allAssetsDF.total_balance == 0.00000000].index)
         allAssetsDF['asset'] = allAssetsDF['asset'].astype(str) + 'BTC'
-        allAssetsDF['asset'] = np.where(allAssetsDF['asset']=='USDTBTC', 'BTCUSDTX', allAssetsDF['asset'])
+        allAssetsDF['asset'] = np.where(allAssetsDF['asset']=='USDTBTC', 'BTCUSDT', allAssetsDF['asset'])
         allAssetsDF.set_index('asset', inplace=True)
         allAssetsDF[['free', 'locked', 'total_balance']] = allAssetsDF[['free', 'locked', 'total_balance']].astype('float64')
         return allAssetsDF
@@ -53,8 +53,16 @@ def get_awais26_merged_usdt_equivalent_balances():
         prices = get_all_ticker_symbols()
         balances = get_awais26_current_balance()
         joinedDF = balances.join(prices)
+
         joinedDF['btc_equivalent'] = joinedDF['price'].astype(float) * joinedDF['total_balance'].astype(float)
         joinedDF['usdt_equivalent'] = joinedDF['btc_equivalent'].multiply(float(get_btc_value()))
+        
+        for index, row in joinedDF.iterrows():
+                if index == 'BTCUSDT':
+                        joinedDF.at[index, 'usdt_equivalent'] = joinedDF.at[index, 'total_balance']
+                        joinedDF.at[index, 'btc_equivalent'] = joinedDF.at[index, 'total_balance']
+        
+        joinedDF = joinedDF[joinedDF.usdt_equivalent > 1]
         joinedDF[['free', 'locked', 'total_balance', 'price', 'btc_equivalent', 'usdt_equivalent']] = joinedDF[['free', 'locked', 'total_balance', 'price', 'btc_equivalent', 'usdt_equivalent']].astype('float64')
         return joinedDF
 print(get_awais26_merged_usdt_equivalent_balances())
