@@ -22,10 +22,10 @@ class SpotWallet(Resource):
     @auth.login_required
     def get(self, account_id):
         if account_id == '1':
-            get_balanceDF = SpotBalance.get_awais26_current_balance()
+            get_balanceDF = SpotBalance.get_awais26_merged_usdt_equivalent_balances()
             json_object = get_balanceDF.to_json(orient='records')  
             return json_object
         elif account_id == '2':
-            get_balanceDF = SpotBalance.get_awais100_current_balance()
+            get_balanceDF = SpotBalance.get_awais100_merged_usdt_equivalent_balances()
             json_object= get_balanceDF.to_json(orient = "records")
             return json_object
