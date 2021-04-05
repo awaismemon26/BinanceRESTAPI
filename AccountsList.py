@@ -2,7 +2,10 @@ from flask import jsonify
 from flask_restful import Resource, abort
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import check_password_hash, generate_password_hash
-from LoginCredentials import username, password
+import os
+
+username = os.environ.get('BINANCEAPI_USERNAME')
+password = os.environ.get('BINANCEAPI_PASSWORD')
 
 listOfAccounts = [
     {'id': '1', 'name': 'Awais26'},
