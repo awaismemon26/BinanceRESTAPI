@@ -22,7 +22,6 @@ def get_awais26_current_balance():
         allAssetsDF.set_index('asset', inplace=True)
         allAssetsDF[['free', 'locked', 'total_balance']] = allAssetsDF[['free', 'locked', 'total_balance']].astype('float64')
         return allAssetsDF
-print(get_awais26_current_balance())
 #%%
 def get_awais100_current_balance():
         
@@ -67,7 +66,6 @@ def get_awais26_merged_usdt_equivalent_balances():
         joinedDF = joinedDF[joinedDF.usdt_equivalent > 1]
         joinedDF[['free', 'locked', 'total_balance', 'price', 'btc_equivalent', 'usdt_equivalent']] = joinedDF[['free', 'locked', 'total_balance', 'price', 'btc_equivalent', 'usdt_equivalent']].astype('float64')
         return joinedDF
-print(get_awais26_merged_usdt_equivalent_balances())
 #%%
 def get_awais100_merged_usdt_equivalent_balances():
         prices = get_all_ticker_symbols()
@@ -81,5 +79,4 @@ def get_awais100_merged_usdt_equivalent_balances():
                         joinedDF.at[index, 'btc_equivalent'] = joinedDF.at[index, 'total_balance']
         joinedDF = joinedDF[joinedDF.usdt_equivalent > 1]
         return joinedDF
-print(get_awais100_merged_usdt_equivalent_balances())
 # %%
