@@ -5,7 +5,12 @@ from numpy import float64
 import numpy as np
 from pandas import DataFrame as dataframe
 import pandas as pd
-from APICredentials import PKey, SKey, PKey_awais100, SKey_awais100
+import os
+
+PKey = os.environ.get('BINANCEAPI_AWAIS26_PKEY')
+SKey = os.environ.get('BINANCEAPI_AWAIS26_SKEY')
+PKey_awais100 = os.environ.get('BINANCEAPI_AWAIS100_PKEY')
+SKey_awais100 = os.environ.get('BINANCEAPI_AWAIS100_SKEY')
 
 awais26_client = Client(PKey, SKey)
 awais100_client = Client(PKey_awais100, SKey_awais100)

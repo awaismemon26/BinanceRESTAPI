@@ -4,7 +4,10 @@ from pandas import DataFrame as dataframe
 import SpotBalance
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import check_password_hash, generate_password_hash
-from LoginCredentials import username, password
+import os
+
+username = os.environ.get('BINANCEAPI_USERNAME')
+password = os.environ.get('BINANCEAPI_PASSWORD')
 
 USER_DATA = {
     username: generate_password_hash(password)
