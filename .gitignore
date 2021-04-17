@@ -2,5 +2,5 @@ __pycache__/
 .vscode/
 binanceRESTAPI.code-workspace
 .DS_Store
-APICredentials.py
-LoginCredentials.py
+pyvenv.cfg
+.python-version
