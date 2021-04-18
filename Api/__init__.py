@@ -1,5 +1,5 @@
-from Api.main.AccountsList import AccountByID, AccountsList
-from Api.main.SpotWallet import SpotWallet
+from Api.AccountsList import AccountByID, AccountsList
+from Api.SpotWallet import SpotWallet
 from flask import Flask
 from flask_restful import Api
 import os
@@ -13,4 +13,4 @@ api.add_resource(SpotWallet, '/accounts/<account_id>/spot')
 
 if __name__ == '__main__':
     PORT = int(os.environ.get("PORT", 8080))
-    app.run(debug=True, host="0.0.0.0", port=PORT)
+    app.run(debug=False, host="0.0.0.0", port=PORT)

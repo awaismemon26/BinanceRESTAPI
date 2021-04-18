@@ -9,7 +9,7 @@ pyvenv.cfg
 *.pyc
 *.pyo
 *.pyd
-__pycache__
+__pycache__/
 .pytest_cache
-lib
-bin
+lib/
+bin/
