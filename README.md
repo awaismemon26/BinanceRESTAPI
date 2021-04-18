@@ -21,6 +21,8 @@ Containarizing our application to make it portable and to ship, build and run wi
 
 ## Commands
 - **Docker run -d --rm -p 8080:8080 --name binancerestapi binancerestapi:v1** (to run docker container)
+Have to pass API keys and Login credentials as environment variables.
+
 
 # Deploying our Container to Cloud
 After we have tested our docker containers on local enviornment, now it's time to deploy our containers on cloud. **I will be choosing Google Cloud Run Serverless Platform**
