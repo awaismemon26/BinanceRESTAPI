@@ -11,3 +11,5 @@ pyvenv.cfg
 *.pyd
 __pycache__
 .pytest_cache
+lib
+bin

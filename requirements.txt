@@ -16,7 +16,6 @@ decorator==5.0.3
 Flask==1.1.2
 Flask-HTTPAuth==4.2.0
 Flask-RESTful==0.3.8
-flatten-json==0.1.13
 google-api-core==1.26.0
 google-auth==1.26.1
 google-cloud-build==3.0.1

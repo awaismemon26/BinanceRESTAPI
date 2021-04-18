@@ -4,3 +4,5 @@ binanceRESTAPI.code-workspace
 .DS_Store
 pyvenv.cfg
 .python-version
+bin/
+lib/
