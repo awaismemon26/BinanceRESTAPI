@@ -1,14 +1,5 @@
-from binance.client import Client
-import os
+from Binance.BinanceClient import awais26_client
 import pandas as pd
-
-__PKey = os.environ.get('BINANCEAPI_AWAIS26_PKEY')
-__SKey = os.environ.get('BINANCEAPI_AWAIS26_SKEY')
-__PKey_awais100 = os.environ.get('BINANCEAPI_AWAIS100_PKEY')
-__SKey_awais100 = os.environ.get('BINANCEAPI_AWAIS100_SKEY')
-
-awais26_client = Client(__PKey, __SKey)
-awais100_client = Client(__PKey_awais100, __SKey_awais100)
 
 def get_aggregated_trades(ticker):
     json_data = awais26_client.get_aggregate_trades(symbol=ticker)
@@ -60,6 +51,3 @@ def get_recent_trade_sum(ticker):
         }
     )
     return tradesDF
-
-
-print(get_recent_trade_sum('ETHUSDT'))
